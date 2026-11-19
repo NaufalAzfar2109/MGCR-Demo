@@ -1,0 +1,718 @@
+
+/* =========================================
+   1. GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    background-color: #f7f3ee;
+}
+
+
+/* =========================================
+   2. NAVBAR
+========================================= */
+
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    width: 100%;
+}
+
+.navbar {
+    height: 63px;
+    min-height: 63px;
+    padding: 0;
+    background-color: #35231d;
+    border-top: 2px solid #493329;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.navbar-container {
+    height: 100%;
+    padding-left: 29px;
+    padding-right: 29px;
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    line-height: 1;
+    color: #f2ece5;
+}
+
+.brand-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: 3px;
+    color: #c7aa8b;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7.5px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #d3c0ad !important;
+    padding: 8px 0 !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff !important;
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 2px;
+    padding: 5px 8px;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+/* =========================================
+   3. HERO SECTION
+========================================= */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 63px);
+    min-height: 437px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background-image: url('images/contoh1.png');
+    background-size: cover;
+    background-position: center 52%;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background-image: linear-gradient(
+        to bottom,
+        rgba(32, 23, 19, 0.43) 0%,
+        rgba(47, 29, 23, 0.68) 45%,
+        rgba(48, 29, 23, 0.91) 100%
+    );
+
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 850px;
+    padding: 0 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    transform: translateY(-1px);
+}
+
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+
+    margin-bottom: 16px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #d2b99e;
+}
+
+.eyebrow-line {
+    display: block;
+    width: 30px;
+    height: 1px;
+    background-color: #997b5c;
+}
+
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 47px;
+    font-weight: 500;
+    line-height: 0.99;
+    letter-spacing: -0.5px;
+    color: #f5eee7;
+    margin-bottom: 16px;
+}
+
+.hero-description {
+    width: 100%;
+    max-width: 405px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #cbb8a4;
+
+    margin-bottom: 27px;
+}
+
+.hero-button {
+    width: 131px;
+    height: 33px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #90704f;
+    background-color: rgba(39, 26, 21, 0.12);
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #e5d5ce;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #90704f;
+    border-color: #90704f;
+    color: #ffffff;
+}
+
+.scroll-indicator {
+    position: absolute;
+    left: 50%;
+    bottom: 62px;
+    transform: translateX(-50%);
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+
+    text-decoration: none;
+}
+
+.scroll-indicator span:first-child {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6px;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+    color: rgba(207, 185, 161, 0.65);
+}
+
+.scroll-line {
+    display: block;
+    width: 1px;
+    height: 21px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(157, 119, 82, 0.8),
+        transparent
+    );
+}
+
+
+/* =========================================
+   4. ABOUT SECTION
+========================================= */
+
+.about-section {
+    min-height: 350px;
+    padding: 90px 20px;
+    background-color: #f7f3ee;
+    color: #35231d;
+    text-align: center;
+}
+
+.section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #9b7958;
+}
+
+.about-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.about-section p {
+    font-size: 12px;
+    color: #81736a;
+}
+
+
+/* =========================================
+   5. TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 991.98px) {
+
+    .navbar {
+        height: auto;
+        min-height: 63px;
+    }
+
+    .navbar-container {
+        min-height: 61px;
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .navbar-collapse {
+        background-color: #35231d;
+        padding: 10px 0 18px;
+    }
+
+    .navbar-nav {
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .nav-link {
+        font-size: 8px;
+        padding: 9px 0 !important;
+    }
+
+    .hero-section {
+        height: calc(100vh - 63px);
+    }
+
+    .hero-title {
+        font-size: 44px;
+    }
+
+}
+
+
+/* =========================================
+   6. MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 575.98px) {
+
+    .navbar-container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .brand-name {
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+
+    .brand-subtitle {
+        font-size: 5px;
+    }
+
+    .hero-section {
+        min-height: 520px;
+        height: calc(100vh - 61px);
+        background-position: center center;
+    }
+
+    .hero-content {
+        padding: 0 18px;
+    }
+
+    .hero-eyebrow {
+        font-size: 6px;
+        letter-spacing: 2px;
+        gap: 7px;
+        margin-bottom: 19px;
+    }
+
+    .eyebrow-line {
+        width: 19px;
+    }
+
+    .hero-title {
+        font-size: clamp(34px, 9vw, 43px);
+        line-height: 1.04;
+        letter-spacing: -0.3px;
+    }
+
+    .hero-description {
+        max-width: 340px;
+        font-size: 9px;
+        line-height: 1.9;
+        margin-bottom: 24px;
+    }
+
+    .hero-button {
+        width: 125px;
+        height: 34px;
+    }
+
+    .scroll-indicator {
+        bottom: 37px;
+    }
+
+}
+
+
+/* =================================
+   TENTANG KAMI
+================================= */
+
+.about-section {
+    position: relative;
+    min-height: 430px;
+    padding: 65px 30px;
+    background-color: #fff9f1;
+    overflow: hidden;
+}
+
+.about-container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+}
+
+/* DEKORASI */
+
+.about-decoration {
+    position: absolute;
+    top: -12px;
+    left: -115px;
+
+    color: #f0d8bd;
+    font-size: 100px;
+    opacity: 0.7;
+    transform: rotate(-25deg);
+}
+
+/* KOLOM GAMBAR */
+
+.about-visual {
+    position: relative;
+    flex: 0 0 300px;
+    height: 255px;
+}
+
+.about-main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 175px;
+    height: 205px;
+
+    border-radius: 38px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(65, 43, 29, 0.13);
+}
+
+.about-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-coffee-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 115px;
+    height: 115px;
+
+    border: 4px solid #fff9f1;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 6px 15px rgba(65, 43, 29, 0.2);
+}
+
+.about-coffee-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* STEMPEL */
+
+.about-stamp {
+    position: absolute;
+    left: -12px;
+    bottom: 10px;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px dashed #9c7655;
+    border-radius: 50%;
+
+    background-color: #fff9f1;
+    color: #77553d;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotate(-15deg);
+    box-shadow: 0 3px 8px rgba(65, 43, 29, 0.12);
+}
+
+.stamp-top,
+.stamp-bottom {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3px;
+    letter-spacing: 0.5px;
+}
+
+.stamp-center {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* KOLOM TEKS */
+
+.about-content {
+    flex: 0 0 300px;
+}
+
+.about-subtitle {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: #bd8955;
+}
+
+.about-title {
+    margin: 0;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.05;
+
+    color: #422d25;
+}
+
+.about-title-decoration {
+    width: 25px;
+    height: 5px;
+
+    margin: 6px 0 8px;
+
+    border-top: 1px solid #d9a66d;
+    border-radius: 50%;
+}
+
+.about-content p {
+    margin-bottom: 7px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6.5px;
+    font-weight: 400;
+    line-height: 1.65;
+
+    color: #816b5c;
+}
+
+/* KARTU KEUNGGULAN */
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+
+    margin-top: 12px;
+}
+
+.about-feature-card {
+    min-height: 56px;
+    padding: 8px 4px 6px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background-color: #fbf0e3;
+    border: 1px solid #f0dfcc;
+    border-radius: 11px;
+}
+
+.feature-icon {
+    width: 19px;
+    height: 19px;
+
+    margin-bottom: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background-color: #dca96d;
+
+    color: #fff9f1;
+    font-size: 9px;
+}
+
+.about-feature-card h6 {
+    margin: 0 0 2px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5.5px;
+    font-weight: 700;
+
+    color: #49352a;
+}
+
+.about-feature-card span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4.5px;
+    line-height: 1.3;
+
+    color: #927b69;
+}
+
+/* RESPONSIVE TABLET */
+
+@media (max-width: 991.98px) {
+    .about-container {
+        gap: 35px;
+    }
+
+    .about-visual {
+        flex-basis: 260px;
+    }
+
+    .about-content {
+        flex-basis: 280px;
+    }
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 575.98px) {
+    .about-section {
+        padding: 55px 22px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .about-visual {
+        width: 100%;
+        max-width: 300px;
+        flex-basis: auto;
+    }
+
+    .about-content {
+        width: 100%;
+        max-width: 300px;
+        flex-basis: auto;
+    }
+
+    .about-title {
+        font-size: 29px;
+    }
+
+    .about-content p {
+        font-size: 10px;
+    }
+
+    .about-feature-card {
+        min-height: 75px;
+    }
+
+    .about-feature-card h6 {
+        font-size: 8px;
+    }
+
+    .about-feature-card span {
+        font-size: 6px;
+    }
+
+    .feature-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 11px;
+    }
+}
