@@ -11,7 +11,7 @@ $pages = [
     "menu",
     "galeri",
     "lokasi"
-];
+    ];
 
 // Menentukan halaman aktif
 $page = $_GET['page'] ?? 'beranda';
@@ -23,11 +23,11 @@ if (!in_array($page, $pages, true)) {
 
 // Navigasi
 $navigation = [
-    "Beranda" => "beranda",
-    "Tentang Kami" => "tentang_kami",
-    "Menu" => "menu",
-    "Galeri" => "galeri",
-    "Lokasi" => "lokasi"
+    "BERANDA" => "beranda",
+    "TENTANG KAMI" => "tentang_kami",
+    "MENU" => "menu",
+    "GALERI" => "galeri",
+    "LOKASI" => "lokasi"
 ];
 
 ?>
@@ -67,67 +67,28 @@ $navigation = [
 
     <header class="main-header">
 
-        <nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg navbar-meteor fixed-top">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.php">
+        <span class="brand-name"><?= $namaCafe ?></span>
+        <span class="brand-sub"><?= $subNama ?></span>
+      </a>
 
-            <div class="container-fluid navbar-container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#menuNav" aria-controls="menuNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-                <!-- BRAND -->
-                <a href="index.php?page=beranda" class="navbar-brand">
-
-                    <span class="brand-name">
-                        <?= $namaCafe ?>
-                    </span>
-
-                    <span class="brand-subtitle">
-                        <?= $subNama ?>
-                    </span>
-
-                </a>
-
-
-                <!-- MOBILE TOGGLER -->
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarContent"
-                    aria-controls="navbarContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-
-                    <span class="navbar-toggler-icon"></span>
-
-                </button>
-
-
-                <!-- NAVIGATION -->
-                <div class="collapse navbar-collapse" id="navbarContent">
-
-                    <ul class="navbar-nav ms-auto">
-
-                        <?php foreach ($navigation as $label => $link): ?>
-
-                            <li class="nav-item">
-
-                                <a
-                                    href="index.php?page=<?= $link ?>"
-                                    class="nav-link <?= $page === $link ? 'active' : '' ?>">
-
-                                    <?= $label ?>
-
-                                </a>
-
-                            </li>
-
-                        <?php endforeach; ?>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </nav>
+      <div class="collapse navbar-collapse justify-content-end" id="menuNav">
+        <ul class="navbar-nav">
+            <?php foreach ($navigation as $label => $link): ?>
+            <li class="nav-item"><a class="nav-link <?= $page === $link ? 'active' : '' ?>" href="index.php?page=<?= $link ?>"><?= $label ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+      </div>
+    </div>
+  </nav>   
 
     </header>
 
